@@ -1,0 +1,34 @@
+kw1
+
+SELECT FirstName, LastName, City
+FROM Employees
+WHERE City = 'Lublin' AND (FirstName LIKE 'M%' OR LastName LIKE '%ski')
+ORDER BY LastName ASC;
+
+kw2
+
+SELECT d.DistrictName, p.ProvinceName
+FROM Districts d
+JOIN Provinces p ON d.ProvinceId = p.ProvinceId;
+
+kw3
+
+SELECT EmployeeId, COUNT(*) AS DocumentsCount
+FROM Documents
+WHERE DocumentTypeId = 1
+GROUP BY EmployeeId;
+
+kw4
+
+INSERT INTO Employees (EmployeeId, FirstName, LastName, City, DistrictId)
+VALUES (25, 'Piotr', 'Nowak', 'Kurów', 314);
+
+kw5
+UPDATE Employees
+SET Email = 'piotr.nowak@gmail.com'
+WHERE EmployeeId = 25;
+
+kw6
+DELETE FROM Employees
+WHERE EmployeeId = 25;
+
